@@ -1,0 +1,578 @@
+/* ------------------- */
+/* THEME AND VARIABLES */
+/* ------------------- */
+
+:root {
+  --bg-color: #ffffff;
+  --text-color: #243238;
+  --text-color-light: #45474F;
+  --heading-color: #000000;
+  --card-bg: #ffffff;
+  --card-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+  --border-color: #EAEAEC;
+  --primary-green: #003F37;
+  --accent-yellow: #C7C81B;
+  --button-dark-bg: #243238;
+  --hero-text-color: #ffffff;
+  --footer-bg: #003F37;
+  --footer-text-color: #ffffff;
+}
+
+[data-theme="dark"] {
+  --bg-color: #121212;
+  --text-color: #e0e0e0;
+  --text-color-light: #a0a0a0;
+  --heading-color: #ffffff;
+  --card-bg: #1e1e1e;
+  --card-shadow: 0 4px 15px rgba(0, 0, 0, 0.4);
+  --border-color: #333333;
+  --primary-green: #003F37; /* Keeping these for brand consistency */
+  --accent-yellow: #C7C81B;
+  --button-dark-bg: #333;
+}
+
+/* ------------------- */
+/* GENERAL STYLES      */
+/* ------------------- */
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+body {
+  overflow-x: hidden;
+  background-color: var(--bg-color);
+  color: var(--text-color);
+  font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto,
+    Oxygen, Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
+  transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+h1, h2, h3, h4, h5, h6 {
+    color: var(--heading-color);
+}
+
+p, p1, p3, p4, p6, p7, p8, p9, p10, p11, p12, p13, p14, p15, p16, p25, p26, p27, p28, p29, p30, p32, p35, p45 {
+    color: var(--text-color-light);
+}
+
+/* ------------------- */
+/* NAVBAR              */
+/* ------------------- */
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 20px 60px;
+  background-color: transparent;
+  position: absolute;
+  width: 100%;
+  z-index: 10;
+}
+
+.nav-links {
+  display: flex;
+  align-items: center;
+  gap: 30px;
+  list-style: none;
+}
+
+.nav-links a {
+  text-decoration: none;
+  color: var(--hero-text-color);
+  font-weight: 500;
+  font-size: 18px; /* Adjusted size */
+}
+.nav-links a:hover{
+  color:yellow;
+}
+
+.nav-links a.no-dropdown {
+  color: var(--accent-yellow);
+}
+
+.auth-buttons {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+}
+
+.login-btn {
+  background: none;
+  border: none;
+  color: var(--hero-text-color);
+  font-size: 16px;
+  cursor: pointer;
+  font-weight: bold;
+}
+
+
+.signup-btn {
+  background-color: var(--accent-yellow);
+  color: var(--primary-green);
+  border: none;
+  padding: 10px 20px;
+  border-radius: 30px;
+  font-weight: bold;
+  cursor: pointer;
+}
+.signup-btn:hover{
+  color:#1a2d77;
+}
+
+.theme-toggle-btn {
+    background: none;
+    border: none;
+    color: var(--hero-text-color);
+    font-size: 22px;
+    cursor: pointer;
+}
+
+/* ------------------- */
+/* HERO SECTION        */
+/* ------------------- */
+.first-1 {
+  background-image: url(./hero-bg\ \(1\).png);
+  background-size: cover;
+  position: relative;
+  padding-bottom: 5rem;
+}
+
+.main {
+  margin-left: 4rem;
+  display: flex;
+  min-height: 80vh;
+  width: 100%;
+  padding: 5px;
+  align-items: center;
+}
+
+.content {
+  width: 50%;
+  padding: 2px;
+  margin-top: 5rem;
+}
+
+#header {
+  letter-spacing: 1px;
+  font-size: 4rem;
+  font-weight: bold;
+  color: var(--hero-text-color);
+}
+#header #span {
+    color: var(--accent-yellow);
+    text-decoration: underline;
+}
+
+.content p {
+  opacity: 0.8;
+  line-height: 1.5;
+  margin-top: 1rem;
+  font-size: 16px;
+  color: var(--hero-text-color);
+}
+
+.hero-buttons {
+    margin-top: 2.5rem;
+}
+
+#btn {
+  border: none;
+  padding: 16px 30px;
+  border-radius: 55px;
+  font-weight: bold;
+  background-color: var(--accent-yellow);
+  color: var(--primary-green);
+  margin-right: 10px;
+  cursor: pointer;
+}
+
+#btn1 {
+  padding: 14px 30px;
+  border-radius: 55px;
+  font-weight: bold;
+  border: 2px solid var(--hero-text-color);
+  color: var(--hero-text-color);
+  background-color: transparent;
+  cursor: pointer;
+}
+
+.image {
+  background-image: url(./hero-banner.png);
+  background-repeat: no-repeat;
+  background-size: contain; /* Changed to contain */
+  background-position: center;
+  height: 650px;
+  width: 50%;
+  margin-right: 4rem;
+  margin-top: 4rem;
+}
+
+#arrow {
+  position: absolute;
+  top: 60%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  z-index: 1;
+  width: 12rem;
+}
+
+.overlay {
+  display: flex;
+  align-items: center;
+  width: 11rem;
+  position: absolute;
+  background: rgba(255, 255, 255, 0.9);
+  padding: 8px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+  font-size: 16px;
+  font-weight: 540;
+  border-radius: 8px;
+  color: var(--text-color);
+}
+.overlay i {
+  font-size: 28px;
+  color: var(--primary-green);
+}
+.overlay span {
+  margin-left: 6px;
+}
+.overlay-courses {
+  top: 45%;
+  right: 30%;
+}
+.overlay-tutors {
+  top: 80%;
+  right: 4%;
+}
+
+/* ------------------- */
+/* SECTION STYLING     */
+/* ------------------- */
+
+.section-container {
+    padding: 2rem 4rem;
+}
+
+.section-1, .main2, .dd, .main-child, .stds, .Article-d3 {
+    display: flex;
+    gap: 20px;
+}
+.section-1 {
+    margin-top: 4rem;
+    align-items: stretch; /* Make children same height */
+}
+
+.why, .why2, .container2 {
+    background-color: var(--card-bg);
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: var(--card-shadow);
+    border: 1px solid var(--border-color);
+}
+
+.why {
+    display: flex;
+    width: 60%;
+}
+.wa {
+    width: 60%;
+}
+.img1 {
+    width: 40%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+#wa-img {
+    width: 100%;
+    max-width: 300px;
+    height: auto;
+}
+#wa-btn{
+  padding: 10px;
+  background-color: #333;
+  color: white;
+  font-weight: bold;
+  border-radius: 10px;
+border: none;
+}
+#wa-btn:hover{
+  background-color:rgb(red, green, blue);
+
+}
+.why2 {
+    width: 40%;
+}
+
+
+/* CARDS */
+/* Add this to your style.css file */
+
+.graphic {
+    /* This ensures the scaled image doesn't overflow the card's rounded corners */
+    overflow: hidden;
+}
+
+.graphic-img {
+    width: 100%;
+    height: auto;
+    
+    /* Add a smooth transition for the scale effect */
+    transition: transform 0.3s ease-in-out; 
+}
+
+
+
+ .graphic-img:hover{
+   
+    transform: scale(1.05); 
+}
+.graphic, .ui, .web, .teacher-1, .student, .insights {
+    background-color: var(--card-bg);
+    border-radius: 10px;
+    box-shadow: var(--card-shadow);
+    overflow: hidden;
+    padding-bottom: 1rem;
+}
+.card-content {
+    padding: 0 20px;
+}
+.card-content h2 {
+    font-size: 1.5rem;
+    margin-top: 1rem;
+}
+.card-content p, .card-content p4, .card-content p10, .card-content p14 {
+    margin: 0.5rem 0;
+}
+.card-content hr {
+    border: 1px solid var(--border-color);
+    margin: 1rem 0;
+}
+.three, .four, .five {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+}
+
+.graph-img, .ui-img, .web-img, .tea-img, .ins-img {
+    width: 100%;
+    height: auto;
+}
+.tea-img {
+    padding: 15px;
+}
+.teacher-1 {
+    text-align: center;
+}
+
+/* Buttons */
+.grp-btn, .ui-btn, .web-btn {
+    margin: 8px 4px 8px 0;
+    padding: 6px 12px;
+    font-weight: 500;
+    background-color: var(--bg-color);
+    border: 1px solid var(--border-color);
+    border-radius: 5px;
+}
+.thr-btn, .for-btn, .fiv-btn {
+    padding: 8px;
+    width: 6rem;
+    border-radius: 8px;
+    border: none;
+    background-color: var(--button-dark-bg);
+    color: white;
+    font-size: 1.2rem;
+    margin-left: auto;
+}
+
+/* Latest Course Section */
+.section-4, .section-5, .section-6, .section-7, .section-8 {
+    padding: 2rem 4rem;
+}
+.section-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 1rem;
+}
+.explore, #se-A-B {
+    width: auto;
+    padding: 1rem 2rem;
+    border-radius: 30px;
+    font-weight: bold;
+    background-color: var(--button-dark-bg);
+    color: white;
+    border: none;
+    cursor: pointer;
+}
+.list {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1.5rem;
+    margin: 2rem 0;
+    list-style: none;
+    color: var(--text-color-light);
+    font-weight: 500;
+}
+
+/* MARQUEE SECTION */
+.main-6{
+    margin-top: 5rem;
+    border-top: 1px solid var(--border-color);
+    border-bottom: 1px solid var(--border-color);
+    padding: 1rem 0;
+}
+.brand{
+    padding: 20px;
+    margin: 0 50px;
+}
+[data-theme="dark"] .brand {
+    filter: invert(1) grayscale(100%) brightness(200%);
+}
+
+/* FOOTER */
+.last-section {
+    width: 100%;
+    background-color: var(--footer-bg);
+    color: var(--footer-text-color);
+    padding: 4rem 4rem 1rem 4rem;
+    margin-top: 4rem;
+}
+.last {
+    display: flex;
+    justify-content: space-around;
+    align-items: flex-start;
+    flex-wrap: wrap;
+    gap: 2rem;
+}
+.last1, .popular-courses, .quick-links, .last4 {
+    flex: 1;
+    min-width: 220px;
+}
+.last h2 {
+    color: var(--footer-text-color);
+    font-size: 1.5rem;
+}
+.last p, .last p45 {
+    color: var(--footer-text-color);
+    opacity: 0.8;
+    line-height: 1.8;
+}
+.social-icons i {
+    margin-top: 1rem;
+    font-size: 22px;
+    margin-right: 15px;
+}
+.horizon {
+    margin: 2rem 0;
+    border-color: rgba(255, 255, 255, 0.2);
+}
+.p45-footer {
+    text-align: center;
+    opacity: 0.7;
+}
+
+
+/* ------------------- */
+/* RESPONSIVE STYLES   */
+/* ------------------- */
+
+/* For Large Tablets */
+@media (max-width: 1200px) {
+    .dd, .main-child, .stds, .Article-d3 {
+        flex-wrap: wrap;
+        justify-content: center;
+    }
+    .graphic, .ui, .web, .teacher-1, .student, .insights {
+        width: 48%;
+    }
+    .overlay-courses { right: 10%; }
+    #arrow { display: none; }
+}
+
+
+/* For Tablets */
+@media (max-width: 992px) {
+    .navbar {
+        padding: 20px 30px;
+    }
+    .nav-links {
+        display: none; /* Hide for a hamburger menu approach */
+    }
+    .main {
+        flex-direction: column;
+        margin-left: 0;
+        text-align: center;
+    }
+    .content, .image {
+        width: 100%;
+        margin: 0;
+    }
+    .image {
+        height: 400px;
+        background-position: center 20%;
+    }
+    .content {
+        margin-top: 120px; /* Space for nav */
+        padding: 0 2rem;
+    }
+    #header {
+        font-size: 3rem;
+    }
+    .overlay {
+        position: static;
+        margin: 1rem auto;
+        transform: none;
+        width: 80%;
+        justify-content: center;
+    }
+    .section-1, .main2 {
+        flex-direction: column;
+        height: auto;
+    }
+    .why, .why2, .container2 {
+        width: 100%;
+    }
+    .explore, #se-A-B {
+        margin: 1rem 0 0 0;
+    }
+    .section-header {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+    .last {
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+    }
+}
+
+
+/* For Mobile Phones */
+@media (max-width: 768px) {
+    .section-container, .section-4, .section-5, .section-6, .section-7, .section-8 {
+        padding: 2rem 1.5rem;
+    }
+    .graphic, .ui, .web, .teacher-1, .student, .insights {
+        width: 100%;
+    }
+    #header {
+        font-size: 2.5rem;
+    }
+    .hero-buttons {
+        display: flex;
+        flex-direction: column;
+        gap: 1rem;
+        align-items: center;
+    }
+    .list {
+        justify-content: center;
+        text-align: center;
+    }
+}
+
+p45{
+  color:white;
+}
